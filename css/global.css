@@ -268,7 +268,7 @@ input[type="number"]::placeholder {
 
 /* Buttons and links */
 button {
-  background: var(--accent-color);
+  background: #264d73;
   border-radius: var(--radius);
   color: white;
   border: 0;
@@ -357,9 +357,9 @@ pre {
 
 /* Pasha styles – Brand-overrides, can split these out */
 :root {
-  --accent-color: #ed5f74;
+  --accent-color: #264d73;
   --headline-color: var(--accent-color);
-  --logo-image: url("https://storage.googleapis.com/stripe-sample-images/logo-pasha.svg");
+  --logo-image: url("https://www.cityusu.hk/uploads/1/2/4/4/124495019/published/1_2.png");
 }
 
 .pasha-image-stack {
