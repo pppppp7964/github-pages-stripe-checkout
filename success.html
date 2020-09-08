@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Stripe Checkout Sample</title>
-    <meta name="description" content="A demo of Stripe client-only Checkout" />
+    <title>CityUSU ePayment Platform - Stripe</title>
+    <meta name="description" content="CityUSU ePayment Platform - Stripe" />
 
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/normalize.css" />
@@ -15,14 +15,25 @@
     <div class="sr-root">
       <div class="sr-main">
         <div class="sr-payment-summary completed-view">
-          <h1>Your payment to CityU Students' Union was succeeded</h1>
-          <h4>Stripe Checkout Session ID: <span id="session"></span></h4>
+          <h1>Your payment to CityU Students' Union was successful</h1>
+          <h3>Stripe Checkout Session ID: <span id="session"></span></h3>
+          <h3>Current Time (D-M-Y): <span id="thisistime"></span></h3>
         </div>
         
       </div>
     </div>
     <script>
       var urlParams = new URLSearchParams(window.location.search);
+
+      var today = new Date();
+
+      var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+      var dateTime = date+' '+time;
+
+      document.getElementById("thisistime").innerHTML = dateTime
 
       if (urlParams.has("session_id")) {
         document.getElementById("session").textContent = urlParams.get(

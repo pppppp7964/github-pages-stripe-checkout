@@ -17,14 +17,25 @@
         <div class="sr-payment-summary completed-view">
           <h1>Your payment to CityU Students' Union was canceled</h1>
           <h3>Stripe Checkout Session ID: <span id="session"></span></h3>
-		  <h1>For support, please send the Session ID by email to:</h1>
-		  <h2>su.its@my.cityu.edu.hk</h2>
+          <h3>Current Time (D-M-Y): <span id="thisistime"></span></h3>
+          <h1>For support, please screen capture this page and send to:</h1>
+          <h2>su-c@my.cityu.edu.hk</h2>
         </div>
         </div>
       </div>
     </div>
     <script>
       var urlParams = new URLSearchParams(window.location.search);
+
+      var today = new Date();
+
+      var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+
+      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+      var dateTime = date+' '+time;
+
+      document.getElementById("thisistime").innerHTML = dateTime
 
       if (urlParams.has("session_id")) {
         document.getElementById("session").textContent = urlParams.get(
